@@ -22,7 +22,7 @@ print(f1(1, 2))
 def f2(*args):
     value = 0
     for number in args:
-        print(number)
+
         value += int(number)
     return value
 
@@ -35,7 +35,8 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # What thing do you have to add to make this work?
-# print(f2(tuple(a)))   # Should print 22   <--------------------NEED TO RETURN TO THIS PROBLEM (1/13)
+# Should print 22   <--------------------NEED TO RETURN TO THIS PROBLEM (1/13)
+print(f2(*a))
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
@@ -84,6 +85,6 @@ d = {
 }
 
 # What thing do you have to add to make this work?
-# f4(d)
+f4(**d)
 
 # f4(d)   <------------- NEED TO RETURN TO THIS PROBLEM (1/13)

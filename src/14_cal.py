@@ -22,3 +22,8 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+c = calendar.TextCalendar()
+str = c.formatmonth(2025, 1)
+print(str)
