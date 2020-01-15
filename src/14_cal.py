@@ -23,7 +23,29 @@ import sys
 import calendar
 from datetime import datetime
 
+# if input = 0 => use current month and current year
+# if input = 1 number => use input for month and current year
+# if input = 2 numbers => use input for both year and month
+# if input > 2 numbers => print statement
+# date_time object
 
-c = calendar.TextCalendar()
-str = c.formatmonth(2025, 1)
-print(str)
+
+if len(sys.argv) == 1:
+    c = calendar.TextCalendar()
+    str = c.formatmonth(datetime.now().year, datetime.now().month)
+    print(str)
+elif len(sys.argv) == 2:
+    c = calendar.TextCalendar()
+    str = c.formatmonth(datetime.now().year, int(sys.argv[1]))
+    print(str)
+elif len(sys.argv) == 3:
+    c = calendar.TextCalendar()
+    str = c.formatmonth(int(sys.argv[2]), int(sys.argv[1]))
+    print(str)
+else:
+    print("Month and year are required for the calendar to print.")
+
+
+# print(len(sys.argv))
+
+# user = input("14_cal.py month [year]")
